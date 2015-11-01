@@ -1,0 +1,41 @@
+title = "Post"
+url = "/:slug"
+layout = "default"
+
+[blogPost]
+slug = "{{ :slug }}"
+==
+{% set post = blogPost.post %}
+<div class="single-page">
+    <div class="single-page-artical">
+        <div class="artical-content">
+            {% for image in post.featured_images %}
+                <img src="{{ image.path|app }}" />
+            {% endfor %}
+
+            {{ post.content_html|raw }}
+        </div>
+        <div class="artical-links">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="{{ 'assets/images/blog-icon2.png'|theme }}" title="Author">
+                        <span>{{ post.user.full_name }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{ 'assets/images/blog-icon3.png'|theme }}" title="Comments">
+                        <span>No comments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{ 'assets/images/blog-icon4.png'|theme }}" title="Lables">
+                        <span>View posts</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

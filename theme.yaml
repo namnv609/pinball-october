@@ -2,3 +2,5 @@ name: Pinball October
 author: NamNV609
 homepage: http://namnv609.cf
 description: Pinball theme style for October CMS
+require:
+    - RainLab.Blog
